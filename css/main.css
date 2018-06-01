@@ -1,0 +1,103 @@
+/*********************************************
+* Reset
+**********************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*********************************************
+* Element base style
+**********************************************/
+body
+{
+  font-family: "Lato" , san-serf;
+  font-size: 100%;
+  line-height: 1.4;
+  background-color: #fff;
+  color: #777;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+section
+{
+  width: 100%;
+  display: block;
+}
+
+p
+{
+  padding: 5px;
+}
+
+
+/*********************************************
+* base style query
+**********************************************/
+#wrapper{
+  width: 90%;
+  margin: 10px auto;
+  /*border: 1px solid #eee;*/
+  padding: 5px;
+}
+
+#filter-area{
+  text-align: center;
+ /* border: 1px solid #eee;*/
+  padding: 10px 0;
+}
+
+.catch-phrase-text{
+  font-size: 1.4em;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+.catch-phrase-text span{
+  letter-spacing: 1.2px;
+  font-size: .65em;
+  color: #009DD9;
+}
+
+.search-form
+{
+  border: 1px solid #eee;
+  margin-top: 20px;
+
+}
+.search-form input
+{
+
+}
+
+/*********************************************
+* media query
+**********************************************/
+@media all and (max-width: 768px)
+{
+
+}
+
+@media all and (min-width: 769px)
+{
+  .heading p{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px  10px;
+  }
+  .heading .logo{
+    width: 30%;
+    text-align: center;
+  }
+  .catch-phrase-text{
+    width: 60%;
+    border-left: 1px solid #eee;
+    font-size: 1.8em;
+  }
+}
