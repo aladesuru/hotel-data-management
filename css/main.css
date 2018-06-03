@@ -36,27 +36,59 @@ p
   padding: 5px;
 }
 
+ul
+{
+  list-style: none;
+}
+
+header
+{
+  text-align: center;
+  background-color: #a2f564;
+}
+
+form input,
+form select
+{
+  border-radius: 0;
+  border: none;
+  outline: none;
+  height: 30px;
+  padding: 0 10px;
+  font-size: .98em;
+}
+
 
 /*********************************************
-* base style query
+* base style for wrapper 
 **********************************************/
-#wrapper{
+.wrapper{
   width: 90%;
-  margin: 10px auto;
-  /*border: 1px solid #eee;*/
-  padding: 5px;
+  margin: auto;
+  max-width: 1200px;
+  /*border: 1px solid red;*/
 }
 
-#filter-area{
-  text-align: center;
- /* border: 1px solid #eee;*/
-  padding: 10px 0;
+/*********************************************
+* wrapper media query section
+**********************************************/
+@media all and (max-width: 768px)
+{
+  .wrapper{
+    width: 98%;
+  }
+ 
 }
+
+/*********************************************
+* base style for heading
+**********************************************/
 
 .catch-phrase-text{
   font-size: 1.4em;
   word-wrap: break-word;
   word-break: keep-all;
+  color: rgba(0,0,0, .8);
 }
 
 .catch-phrase-text span{
@@ -65,25 +97,9 @@ p
   color: #009DD9;
 }
 
-.search-form
-{
-  border: 1px solid #eee;
-  margin-top: 20px;
-
-}
-.search-form input
-{
-
-}
-
 /*********************************************
-* media query
+* heading media query section
 **********************************************/
-@media all and (max-width: 768px)
-{
-
-}
-
 @media all and (min-width: 769px)
 {
   .heading p{
@@ -97,7 +113,267 @@ p
   }
   .catch-phrase-text{
     width: 60%;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #fff;
     font-size: 1.8em;
   }
 }
+
+
+/*********************************************
+* form search base style
+**********************************************/
+
+#filter-area{
+  border: 1px solid #0ab8fb;
+  margin: 20px 0;
+  background-color: #f5f5f5;
+  height: 30px;
+  overflow: hidden;
+  transition: height;
+}
+.filter{
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.filter select
+{
+  background-color: #009DD9; 
+  cursor: pointer;
+}
+
+.filter div:first-child,
+.filter select{
+  background-color: #009DD9;
+  color: #fff;
+}
+.filter div:first-child label{
+  padding-left: 5px;
+  padding-top: 5px;
+  background-color: #009DD9;
+}
+
+.filter div:last-child input[type="text"]{
+  width: 60%;
+  outline: none;
+}
+.searchbtn{
+  color: #f5f5f5;
+  text-align: center;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: #FF7802;
+  transition: all .56s;
+}
+.searchbtn:hover{
+  box-shadow: 0 2px 2px #c35e05;
+  letter-spacing: 1.1px;
+}
+
+.frmelement-container{
+  margin-bottom: 20px;
+}
+
+.sort{
+  text-align: right;
+  color:  #FF7802;
+}
+.sort select{
+  background-color: #009DD9;
+  color: #fff;
+}
+
+/*********************************************
+* search form media query section
+**********************************************/
+@media all and (max-width: 768px)
+{
+ .filter div:first-child label,
+ .filter div:last-child input[type="text"]{
+  float: left;
+ }
+ .filter div:first-child select,
+ .filter div:last-child input[type="submit"]{
+  float: right;
+ }
+
+ .filter div:first-child::after,
+ .filter div:last-child::after{
+  content: " ";
+  display: block;
+  clear: both;
+ }
+
+ .filter div:last-child{
+  border: 1px solid #eee;
+ }
+
+ .sort{
+  text-align: center;
+}
+
+}
+
+@media all and (min-width: 769px)
+{
+  
+  .filter div
+   {
+    display: inline-block;
+    vertical-align: top; 
+    /*outline: 1px solid red;*/
+   }
+  
+   .filter div:first-child{
+    width: 40%;
+   }
+   .filter div:last-child{
+    width: 60%;
+   }
+
+   .filter div:first-child label,
+   .filter div:last-child input[type="text"]{
+    float: left;
+   }
+   .filter div:first-child select,
+   .filter div:last-child input[type="submit"]{
+    float: right;
+   }
+
+   .filter div:last-child input[type="text"]{
+    width: 60%;
+   }
+   .sort{
+    margin-right: 5px;
+   }
+}
+
+@media all and (min-width: 900px)
+{
+  .filter div:first-child{
+    width: 40%;
+   }
+   .filter div:last-child{
+    width: 60%;
+   }
+}
+
+@media all and (min-width: 1200px)
+{
+  .filter div:first-child{
+    width: 30%;
+   }
+   .filter div:last-child{
+    width: 70%;
+   }
+}
+
+/*********************************************
+* hotel list base style
+**********************************************/
+.list-container{
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0, .8);
+  font-size: .96em;
+  color: #111;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+.name{
+  color: #005EB8;
+  font-size: 1.2em;
+  word-wrap: break-word;
+  word-break: keep-all;
+  padding: 5px 
+}
+.userrating span
+{
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+}
+.userrating span:first-child{
+  background-color: #428500;
+  border:1px solid #316300;
+  color: #fff;
+  border-radius: 2px; 
+}
+.userrating span:last-child{
+  color: #0ab8fb;
+}
+.userrating span:last-child span{
+  font-size: .68em;
+  background-color: transparent;
+  border: none;
+}
+.hotel-cost{
+  color: #FF7802;
+  padding: 5px;
+  text-align: center;
+  text-shadow: 1px 0px 1px rgba(0,0,0, .3)
+}
+.hotel-image,
+.hotel-info-container{
+  display: inline-block;
+  vertical-align: top;
+}
+.hotel-image{
+  padding: 10px;
+}
+
+/*********************************************
+* hotel list media query 
+**********************************************/
+@media all and (max-width: 768px)
+{
+  .name{
+   font-size: 1.1em;
+  }
+  .userrating span
+  {
+    font-size: .78em;
+  }
+  .hotel-image{
+    width: 30%;
+  }
+  .hotel-info-container{
+    width: 69%;
+  }
+  .hotel-cost{
+    text-align: right;
+  }
+}
+
+@media all and (min-width: 769px)
+{
+  .hotel-image,
+  .hotel-info-container,
+  .hotel-cost{
+    display: inline-block;
+    vertical-align: top;
+   /* outline: 1px solid red;*/
+  }
+  .hotel-image,
+  .hotel-cost{
+    width: 20%;
+  }
+  .hotel-info-container{
+    width: 55%;
+    font-size: 1.4em;
+  }
+
+   .hotel-cost{
+    font-size: 1.3em;
+    border-left: 1px solid #eee;
+    height: 200px;
+    padding-top: 7%;
+   }
+
+}
+
+@media all and (min-width: 1200px)
+{
+
+}
+
+

@@ -20,31 +20,82 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-    <div id="wrapper"> <!-- start of wrapper -->
+     <header>
+       <div class="heading wrapper">
+         <p class="logo">
+           <img src="images/logo.svg">
+         </p>
+         <p class="catch-phrase-text">
+            Find your ideal hotel for last minute summer deal <span>YOUR PERFECT HOLIDAY</span>
+         </p>
+      </div>
+     </header>
+
+    <div class="wrapper"> <!-- start of wrapper -->
       <section> <!-- filter of area -->
         <div id="filter-area">
-         <div class="heading">
-           <p class="logo">
-             <img src="images/logo.svg">
-           </p>
-           <p class="catch-phrase-text">
-              Find your ideal hotel for last minute summer deal <span>YOUR PERFECT HOLIDAY</span>
-           </p>
-         </div>
-         <form class="search-form">
-           <div>
-               <input type="text"  id="user" placeholder="Enter hotel name" class="search-input" />
-               <input type="submit" value="Search" class="searchBtn" />
+         <form id="search-form">
+           <div class="filter frmelement-container">
+
+             <div>
+                <label>Filter By</label>
+                <select id="filter">
+                  <option value="name">Name of the hotel</option>
+                  <option value="starrating">Star rating</option>
+                  <option value="userrating">User rating</option>
+                  <option value="minprice">Minimum price</option>
+                </select>
+             </div><div>
+              <input type="text"  id="user" placeholder="Enter hotel name" class="search-input" />
+              <input type="submit" value="Search" class="searchbtn" />
+             </div>
+             
            </div>
-           <div class="searchBtn">
-            
+
+           <div class="sort frmelement-container">
+            <label>
+              Sort By
+              <select id="sort">
+                <option value="distance">Distance</option>
+                <option value="starrating">Star rating</option>
+                <option value="userrating">User rating</option>
+                <option value="minprice">Minimum price</option>
+              </select>
+            </label> 
            </div>
          </form>
       </div>
-      </section><!-- end of filter of area -->
+      </section><!-- end of filter -->
 
-      <section>
-        
+      <section><!--start of list of hotels -->
+        <ul>
+          <li class="list-container">
+            <div>
+              <div class="hotel-image"><img src="images/imagetest.jpg" /></div>
+              <div class="hotel-info-container">
+                <p class="name">Magic Circus Hotel at Disneyland Paris</p>
+                <p class="starrating">star rating</p>
+                <p class="location"><span>Lodon</span><span> 7.34 miles</span></p>
+                <p class="userrating"><span>user rating</span><span>Excellent<span>(300 Reviews)</span></span></p>
+              </div>
+              <div class="hotel-cost"><p>Price From &pound;200</p></div>
+            </div>
+          </li>
+
+          <li class="list-container">
+            <div>
+              <div class="hotel-image"><img src="images/imagetest.jpg" /></div>
+              <div class="hotel-info-container">
+                <p class="name">Magic Circus Hotel at Disneyland Paris</p>
+                <p class="starrating">star rating</p>
+                <p class="location"><span>Lodon</span><span> 7.34 miles</span></p>
+                <p class="userrating"><span>user rating</span><span>Excellent<span>(300 Reviews)</span></span></p>
+              </div>
+              <div class="hotel-cost"><p>Price From &pound;200</p></div>
+            </div>
+          </li>
+
+        </ul> 
       </section>
    </div> <!-- end of wrapper -->
 
