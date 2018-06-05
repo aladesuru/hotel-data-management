@@ -45,16 +45,14 @@ let bindSortData = () => {
     hotelDataManagement.displayData(sorted_records);
   }  
 }
-
-
+eventUtility.addHandler(sortel , 'change', bindSortData);
 /* To fetch data set to display , search data and sort it . 
 * i will create another object to model these functionalities,
 *  the object name will be called hotelDataManagement 
 */
-const hotelDataManagement = {
 
-  dataSet : null ,
-  errorMsg : '' ,
+const hotelDataManagement = {
+  errorMsg : '',
 
   fetchRecord : (ApiUrl) => {
     let xhr = new XMLHttpRequest();
@@ -98,21 +96,11 @@ const hotelDataManagement = {
     </li>`
   }
   mainContent.innerHTML = ul + li + "</ul>";
-  eventUtility.addHandler(sortel , 'change', bindSortData);
+  
   }
 }
 
 //fetch data
-
  hotelDataManagement.fetchRecord('hotels.json');
 
- //sort data
- // let sortrec = () => {
- //  hotelDataManagement.fetchRecord('hotels.json');
- // }
- // 
-
-// search data
-
-
-
+ 
