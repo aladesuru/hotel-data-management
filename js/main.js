@@ -73,10 +73,6 @@ const hotelDataManagement = {
           </li>`
         }
         mainContent.innerHTML = ul + li + "</ul>";
-
-
-         
-          return records;
         }else{                                    // if request not successfull display the following errorMsg       
           this.errorMsg = 
           "Sorry something went wrong we are working on it to give the best user experience"; 
