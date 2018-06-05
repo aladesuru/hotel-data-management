@@ -39,14 +39,14 @@
              <div>
                 <label>Filter By</label>
                 <select id="filter-option">
-                  <option value="Hotel Name">Name of the hotel</option>
-                  <option value="Star Rating">Star rating</option>
-                  <option value="User Rating">User rating</option>
-                  <option value="Min Price">Minimum price</option>
+                  <option value="Name">Name of the hotel</option>
+                  <option value="Stars">Star rating</option>
+                  <option value="UserRating">User rating</option>
+                  <option value="MinCost">Minimum cost</option>
                 </select>
              </div><div>
               <input type="text"  id="search-text" placeholder="Enter hotel name" class="search-input" />
-              <input type="submit" value="Search" class="searchbtn" />
+              <input type="submit" value="Search" class="searchbtn" id="submit-btn" />
              </div>
              
            </div>
@@ -54,7 +54,7 @@
            <div class="sort frmelement-container">
             <label>
               Sort By
-              <select id="sort">
+              <select id="sortby">
                 <option value="Distance">Distance</option>
                 <option value="Stars">Star rating</option>
                 <option value="UserRating">User rating</option>
