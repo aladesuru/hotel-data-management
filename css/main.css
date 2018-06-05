@@ -151,6 +151,8 @@ form select
   padding-left: 5px;
   padding-top: 5px;
   background-color: #009DD9;
+  color: #f5f5f5;
+  font-weight: bolder;
 }
 
 .filter div:last-child input[type="text"]{
@@ -177,6 +179,7 @@ form select
 .sort{
   text-align: right;
   color:  #FF7802;
+  font-weight: bolder;
 }
 .sort select{
   background-color: #009DD9;
