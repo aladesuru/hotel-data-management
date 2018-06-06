@@ -82,9 +82,11 @@ let matchRecord = (event) => {
 
   if (searchResult) {
       hotelDataManagement.displayData(searchResult);
-    } else {
-      mainContent.innerHTML = '<div style="font-size:2em;"> Sorry not available </div>';
-    }
+    } 
+
+  if(searchResult.length === 0){
+    mainContent.innerHTML = '<div style="font-size: 2em;">sorry not available</div>' ;
+  }
 };
 eventUtility.addHandler(submitBtn ,'click', matchRecord); 
 
