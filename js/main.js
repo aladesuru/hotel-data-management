@@ -68,7 +68,7 @@ eventUtility.addHandler(sortBy , 'change', bindSortData);
 let matchRecord = (event) => {
   event = eventUtility.getEvent(event);
   eventUtility.preventDefault();   //prevent sumbit button from submiting form
-  let val = searchText.value
+  let val = searchText.value.trim();
   let match = filterOption.value;
   let searchResult = [];
 
