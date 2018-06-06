@@ -68,7 +68,7 @@ eventUtility.addHandler(sortBy , 'change', SortData);
 let RecordSearch = (event) => {
   event = eventUtility.getEvent(event);
   eventUtility.preventDefault();   //prevent sumbit button from submiting form
-  let val = searchText.value
+  let val = searchText.value.trim();
   let match = filterOption.value;
   let searchResult = [];
 
@@ -85,8 +85,6 @@ let RecordSearch = (event) => {
       mainContent.innerHTML = '<div style="font-size:2em;"> Sorry record not available </div>';
     }
   }
-
-  
 };
 eventUtility.addHandler(submitBtn ,'click', RecordSearch); 
 
