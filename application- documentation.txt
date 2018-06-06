@@ -7,7 +7,7 @@ and list the data with mininum interface functionality such searching , sort and
 
 Interactive
 -----------
-User can interact with the app by set of element on the interface.
+User can interact with the app by sets of element on the interface.
 1. there is search button which user can click after selecting filter option, which display set of data
    that matches option selected.
 2. user can sort data by selecting sort option.
@@ -16,6 +16,10 @@ Logic
 -----
 App is build with pure Javascript , HTML and CSS. also the app is base on mordern techniques such is object oriented programming,
 take the advantage of progressive web. mordern standard of writing code in Javascrispt is implimented , also in HTML and CSS.
+
+Note
+-----
+Some resource are missing or path are wrong (images) to be specific, in the hotels.josn
 
 
 

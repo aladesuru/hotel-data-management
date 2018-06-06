@@ -57,6 +57,11 @@ form select
   padding: 0 10px;
   font-size: .98em;
 }
+form select
+{
+  cursor: pointer;
+}
+
 
 
 /*********************************************
@@ -66,7 +71,6 @@ form select
   width: 90%;
   margin: auto;
   max-width: 1200px;
-  /*border: 1px solid red;*/
 }
 
 /*********************************************
@@ -135,7 +139,6 @@ form select
 .filter select
 {
   background-color: #009DD9; 
-  cursor: pointer;
 }
 
 .filter div:first-child,
@@ -220,7 +223,6 @@ form select
    {
     display: inline-block;
     vertical-align: top; 
-    /*outline: 1px solid red;*/
    }
   
    .filter div:first-child{

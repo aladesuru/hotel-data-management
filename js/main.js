@@ -7,11 +7,11 @@ let filterForm = document.getElementById('filter-form');
 let submitBtn = document.getElementById('submit-btn')
 let mainContent = document.getElementById('main-content');
 let searchForm = document.getElementById('search-form');
-let sortBy = document.getElementById('sortby');
-let records = null;
+let sortBy = document.getElementById('sortby'); 
+let records = []; 
 
 /* For crossbrowser compatiblity i created an 
-*  event utitilities to access Event object regardless of how event handler is called 
+*  event utitilities to access Event object regardless of how event handler is define 
 *  and also provide support for browser that is not DOM event compliant 
 */
 
@@ -53,7 +53,7 @@ let changePlaceholderText = () => {
 eventUtility.addHandler(filterOption ,'change' , changePlaceholderText);
 
 /* call back function that sort data*/
-let bindSortData = () => {    
+let SortData = () => {    
   let val = sortBy.value;
   if(records && val){
     sorted_records = records.sort(function(a, b){
@@ -62,10 +62,10 @@ let bindSortData = () => {
     hotelDataManagement.displayData(sorted_records);
   }  
 }
-eventUtility.addHandler(sortBy , 'change', bindSortData);
+eventUtility.addHandler(sortBy , 'change', SortData);
 
 /* call back function that search data*/
-let matchRecord = (event) => {
+let RecordSearch = (event) => {
   event = eventUtility.getEvent(event);
   eventUtility.preventDefault();   //prevent sumbit button from submiting form
   let val = searchText.value
@@ -73,28 +73,30 @@ let matchRecord = (event) => {
   let searchResult = [];
 
   if (records){
-    for (var i = 0; i <= records.length - 1; i++){
+    for (var i = 0; i <= records.length - 1; i++){    
           if (val == records[i][match]) {
             searchResult.push(records[i]);
       }
     }
+
+    if (searchResult.length !== 0) {
+      hotelDataManagement.displayData(searchResult);
+    } else if(searchResult.length == 0){
+      mainContent.innerHTML = '<div style="font-size:2em;"> Sorry record not available </div>';
+    }
   }
 
-  if (searchResult) {
-      hotelDataManagement.displayData(searchResult);
-    } else {
-      mainContent.innerHTML = '<div style="font-size:2em;"> Sorry not available </div>';
-    }
+  
 };
-eventUtility.addHandler(submitBtn ,'click', matchRecord); 
+eventUtility.addHandler(submitBtn ,'click', RecordSearch); 
 
-/* To fetch data set to display , search data and sort it . 
-* i will create another object to model these functionalities,
-*  the object name will be called hotelDataManagement 
+/* To fetch data set  and  display them, 
+*   have created another object to model these functionalities,
+*  the object name is called hotelDataManagement 
 */
 
 const hotelDataManagement = {
-  errorMsg : '' ,   //error message if the fetching data fails
+  errorMsg : '' ,   //error message if the fetch data fails
 
 /* method that fetch the data on page load and display them*/
   fetchRecord : (ApiUrl) => {
@@ -108,7 +110,7 @@ const hotelDataManagement = {
           hotelDataManagement.displayData(records);
         }else{                                     // if request not successfull display the following errorMsg       
           this.errorMsg = 
-          "Sorry something went wrong we are working on it to give the best user experience"; 
+          "Sorry something went wrong we are working on it to give the best user experience.Try again please"; 
           alert(errorMsg);
         }
       } 
@@ -143,5 +145,5 @@ const hotelDataManagement = {
 };
 
 //fetch data
- hotelDataManagement.fetchRecord('hotels.json');
+hotelDataManagement.fetchRecord('hotels.json');
 
