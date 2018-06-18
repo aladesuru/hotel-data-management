@@ -34,7 +34,7 @@ let eventUtility = {
     return event.target || event.srcElement;
   },
 
-  preventDefault : (even) => {
+  preventDefault : (event) => {
     if (event.preventDefault) {
       return event.preventDefault();
     } else {
